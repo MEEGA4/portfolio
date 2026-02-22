@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Alejandro Martinez Barba - Estudiante de Ingenieria Informatica en la Universidad de Deusto">
+  <title>Alejandro Martinez Barba | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">AMB</a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#hero" class="nav__link active">Inicio</a></li>
+        <li><a href="#about" class="nav__link">Sobre Mi</a></li>
+        <li><a href="#projects" class="nav__link">Proyectos</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#education" class="nav__link">Educacion</a></li>
+        <li><a href="#contact" class="nav__link">Contacto</a></li>
+        <li>
+          <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="nav__hamburger" id="hamburger" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile-menu" id="mobileMenu">
+    <a href="#hero" class="nav__mobile-link">Inicio</a>
+    <a href="#about" class="nav__mobile-link">Sobre Mi</a>
+    <a href="#projects" class="nav__mobile-link">Proyectos</a>
+    <a href="#skills" class="nav__mobile-link">Skills</a>
+    <a href="#education" class="nav__mobile-link">Educacion</a>
+    <a href="#contact" class="nav__mobile-link">Contacto</a>
+    <button class="theme-toggle" id="themeToggleMobile" aria-label="Cambiar tema">
+      <i class="fa-solid fa-sun"></i>
+    </button>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero__glow"></div>
+    <div class="hero__content">
+      <p class="hero__greeting reveal">Hola, soy</p>
+      <h1 class="hero__name reveal reveal-delay-1">Alejandro Martinez Barba</h1>
+      <div class="hero__role reveal reveal-delay-2">
+        <span class="hero__role-text"></span><span class="cursor"></span>
+      </div>
+      <p class="hero__description reveal reveal-delay-3">
+        Construyendo aplicaciones web full-stack con tecnologias modernas.
+        Apasionado por el codigo limpio y las experiencias de usuario intuitivas.
+      </p>
+      <div class="hero__ctas reveal reveal-delay-3">
+        <a href="#projects" class="btn-primary">
+          <i class="fa-solid fa-code"></i> Ver Proyectos
+        </a>
+        <a href="assets/img/Martinez_Barba_Alejandro_CV.pdf" class="btn-secondary" id="downloadCV" download>
+          <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+        </a>
+      </div>
+      <div class="hero__socials reveal reveal-delay-4">
+        <a href="https://github.com/MEEGA4" class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alejandro-mart%C3%ADnez-8bb700341" class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:zarzaleja86@gmail.com" class="hero__social-link" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">Sobre Mi</h2>
+        <div class="section-header__line"></div>
+      </div>
+      <div class="about__grid">
+        <div class="about__image-wrapper about__image-wrapper--placeholder reveal reveal--left">
+          <span class="placeholder-initial">A</span>
+        </div>
+        <div class="about__text">
+          <p class="reveal">
+            Soy estudiante de Ingenieria Informatica en la Universidad de Deusto, apasionado por
+            construir software que resuelva problemas reales. Disfruto trabajando en todo el stack,
+            desde el diseno de interfaces intuitivas hasta la arquitectura de sistemas backend robustos.
+          </p>
+          <p class="reveal reveal-delay-1">
+            A traves de mis asignaturas de Procesos de Software e Ingenieria Web, he adquirido
+            experiencia practica con frameworks modernos y flujos de trabajo de desarrollo colaborativo.
+            Me desenvuelvo bien en equipo y me motiva transformar ideas complejas en aplicaciones
+            funcionales y bien acabadas.
+          </p>
+          <div class="about__highlights reveal reveal-delay-2">
+            <div class="about__highlight">
+              <span class="about__highlight-value">2+</span>
+              <span class="about__highlight-label">Proyectos</span>
+            </div>
+            <div class="about__highlight">
+              <span class="about__highlight-value">625+</span>
+              <span class="about__highlight-label">Commits</span>
+            </div>
+            <div class="about__highlight">
+              <span class="about__highlight-value">Deusto</span>
+              <span class="about__highlight-label">Universidad</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 class="section-header__title">Proyectos Destacados</h2>
+        <div class="section-header__line"></div>
+      </div>
+      <div class="projects__grid">
+
+        <!-- Project 1: Tabacos-Manolo -->
+        <div class="project-card reveal">
+          <div class="project-card__image project-card__image--placeholder">
+            <i class="fa-solid fa-store"></i>
+            <span class="project-card__image-label">Tabacos-Manolo</span>
+          </div>
+          <div class="project-card__content">
+            <span class="project-card__course">Procesos de Software / Ingenieria Web</span>
+            <h3 class="project-card__title">Tabacos-Manolo</h3>
+            <p class="project-card__description">
+              Aplicacion web full-stack construida con un frontend reactivo en Vue.js y un backend
+              en Python. Combina una interfaz de usuario moderna con procesamiento del lado del servidor
+              para ofrecer una experiencia web completa y funcional.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag">Vue.js</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/imanoldg/Tabacos-Manolo" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> Ver en GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: LinkAuto -->
+        <div class="project-card project-card--reverse reveal">
+          <div class="project-card__image project-card__image--placeholder">
+            <i class="fa-solid fa-car"></i>
+            <span class="project-card__image-label">LinkAuto</span>
+          </div>
+          <div class="project-card__content">
+            <span class="project-card__course">Procesos de Software / Ingenieria Web</span>
+            <h3 class="project-card__title">LinkAuto</h3>
+            <p class="project-card__description">
+              Red social para entusiastas del automovilismo con perfiles de usuario, comparticion
+              de vehiculos e interaccion comunitaria. Desarrollada con una API REST en Spring Boot
+              y un cliente web, respaldada por MySQL. Mas de 526 commits de desarrollo colaborativo.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">REST API</span>
+              <span class="tag">HTML</span>
+            </div>
+            <div class="project-card__links">
+              <a href="https://github.com/oiercar19/LinkAuto" class="project-card__link" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> Ver en GitHub <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 class="section-header__title">Skills Tecnicas</h2>
+        <div class="section-header__line"></div>
+      </div>
+
+      <div class="skills__categories reveal">
+        <button class="skills__category-btn active" data-category="all">Todos</button>
+        <button class="skills__category-btn" data-category="languages">Lenguajes</button>
+        <button class="skills__category-btn" data-category="frameworks">Frameworks</button>
+        <button class="skills__category-btn" data-category="tools">Herramientas</button>
+        <button class="skills__category-btn" data-category="concepts">Conceptos</button>
+      </div>
+
+      <div class="skills__grid">
+        <!-- Languages -->
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-javascript-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">JavaScript</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-python-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Python</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-java-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Java</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-c-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">C</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-cplusplus-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">C++</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-html5-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">HTML5</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-css3-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">CSS3</span>
+        </div>
+        <div class="skill-card reveal" data-category="languages">
+          <i class="devicon-mysql-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">SQL</span>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="skill-card reveal" data-category="frameworks">
+          <i class="devicon-vuejs-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Vue.js</span>
+        </div>
+        <div class="skill-card reveal" data-category="frameworks">
+          <i class="devicon-spring-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Spring Boot</span>
+        </div>
+        <div class="skill-card reveal" data-category="frameworks">
+          <i class="devicon-nodejs-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Node.js</span>
+        </div>
+        <div class="skill-card reveal" data-category="frameworks">
+          <i class="devicon-swagger-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Swagger</span>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-card reveal" data-category="tools">
+          <i class="devicon-git-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Git</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <i class="devicon-github-original skill-card__icon"></i>
+          <span class="skill-card__name">GitHub</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <i class="devicon-mysql-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">MySQL</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <i class="devicon-mongodb-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">MongoDB</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <i class="devicon-vscode-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">VS Code</span>
+        </div>
+        <div class="skill-card reveal" data-category="tools">
+          <i class="devicon-docker-plain colored skill-card__icon"></i>
+          <span class="skill-card__name">Docker</span>
+        </div>
+
+        <!-- Concepts -->
+        <div class="skill-card reveal" data-category="concepts">
+          <i class="fa-solid fa-vial skill-card__icon skill-card__icon--fa"></i>
+          <span class="skill-card__name">Unit Testing</span>
+        </div>
+        <div class="skill-card reveal" data-category="concepts">
+          <i class="fa-solid fa-cubes skill-card__icon skill-card__icon--fa"></i>
+          <span class="skill-card__name">POO</span>
+        </div>
+        <div class="skill-card reveal" data-category="concepts">
+          <i class="fa-solid fa-plug skill-card__icon skill-card__icon--fa"></i>
+          <span class="skill-card__name">APIs REST</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 class="section-header__title">Educacion</h2>
+        <div class="section-header__line"></div>
+      </div>
+      <div class="education__card reveal">
+        <div class="education__icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="education__info">
+          <h3 class="education__degree">Ingenieria Informatica</h3>
+          <p class="education__school">Universidad de Deusto, Bilbao</p>
+          <p class="education__date">2022 - 2027</p>
+          <p class="education__detail">
+            Formacion en desarrollo de software, ingenieria web, procesos de software,
+            estructuras de datos, algoritmos y sistemas distribuidos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 class="section-header__title">Trabajemos Juntos</h2>
+        <div class="section-header__line"></div>
+      </div>
+      <p class="contact__text reveal">
+        Actualmente estoy abierto a oportunidades de practicas y posiciones junior.
+        Si tienes un proyecto interesante o una oportunidad, no dudes en contactarme.
+      </p>
+      <a href="mailto:zarzaleja86@gmail.com" class="contact__email-btn reveal">
+        <i class="fa-solid fa-paper-plane"></i> Enviar un email
+      </a>
+      <div class="contact__socials reveal">
+        <a href="https://github.com/MEEGA4" class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alejandro-mart%C3%ADnez-8bb700341" class="hero__social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:zarzaleja86@gmail.com" class="hero__social-link" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        &copy; 2026 Alejandro Martinez Barba. Hecho con HTML, CSS y JavaScript.
+      </p>
+      <a href="#hero" class="footer__back-to-top" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
