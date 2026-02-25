@@ -205,16 +205,19 @@ function initCVDownload() {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     const url = btn.getAttribute('href');
-    const filename = url.split('/').pop();
+    const filename = btn.getAttribute('download') || 'CV.pdf';
 
     fetch(url)
       .then(res => res.blob())
       .then(blob => {
         const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
+        const blobUrl = URL.createObjectURL(blob);
+        a.href = blobUrl;
         a.download = filename;
+        document.body.appendChild(a);
         a.click();
-        URL.revokeObjectURL(a.href);
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
       })
       .catch(() => {
         window.open(url, '_blank');
