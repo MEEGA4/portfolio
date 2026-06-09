@@ -71,7 +71,7 @@ function initActiveNav() {
     });
   }, {
     threshold: 0.3,
-    rootMargin: '-64px 0px 0px 0px'
+    rootMargin: '-88px 0px 0px 0px'
   });
 
   sections.forEach(section => observer.observe(section));
@@ -143,9 +143,9 @@ function initTypingEffect() {
   const element = document.querySelector('.hero__role-text');
   if (element) {
     new TypeWriter(element, [
-      'Estudiante de Ingenieria Informatica',
-      'Desarrollador Web Full-Stack',
-      'Universidad de Deusto'
+      'desarrollador full-stack',
+      'ingenieria informatica @ deusto',
+      'codigo limpio, software bien acabado'
     ]);
   }
 }
