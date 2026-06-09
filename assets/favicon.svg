@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#11100E"/>
+  <path d="M10 10h10M10 10v10" stroke="#473F30" stroke-width="2" fill="none"/>
+  <path d="M54 54H44M54 54V44" stroke="#473F30" stroke-width="2" fill="none"/>
+  <text x="32" y="43" font-family="ui-monospace, 'JetBrains Mono', Consolas, monospace" font-size="26" font-weight="700" fill="#E89A4A" text-anchor="middle">[A]</text>
+</svg>

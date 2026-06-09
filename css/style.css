@@ -913,6 +913,38 @@ section { padding: 110px 0; }
 .project-card__link:hover { color: var(--accent-hover); }
 .project-card__link:hover::after { transform: scaleX(1); }
 
+/* ghost entry: dashed placeholder linking to the full GitHub profile */
+.project-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 26px 32px;
+  border: 1px dashed var(--border-hover);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  transition: border-color 0.3s ease;
+}
+.project-ghost:hover { border-color: var(--accent); }
+
+.project-ghost__index {
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.project-ghost__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  transition: color 0.25s ease;
+}
+.project-ghost:hover .project-ghost__link { color: var(--accent); }
+.project-ghost:hover .btn__arrow { transform: translateX(4px); }
+
 /* reversed layout: content keeps the wide track, image moves right */
 .project-card--reverse { grid-template-columns: 1.15fr 0.85fr; }
 .project-card--reverse .project-card__image {

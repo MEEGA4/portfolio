@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillsFilter();
   initTypingEffect();
   initCVDownload();
+  logConsoleSignature();
 });
 
 // ===== 1. THEME MANAGEMENT =====
@@ -196,7 +197,19 @@ function initSkillsFilter() {
   });
 }
 
-// ===== 6. CV DOWNLOAD =====
+// ===== 6. CONSOLE SIGNATURE =====
+
+function logConsoleSignature() {
+  const mono = 'font-family: "JetBrains Mono", monospace;';
+  console.log(
+    '%c REGISTRO %c v2026.06 — bilbao, es\n%c> hola, curioso. el codigo esta en github.com/MEEGA4',
+    `${mono} background: #E89A4A; color: #11100E; font-weight: 700; padding: 2px 6px;`,
+    `${mono} color: #6E665A;`,
+    `${mono} color: #E89A4A;`
+  );
+}
+
+// ===== 7. CV DOWNLOAD =====
 
 function initCVDownload() {
   const btn = document.getElementById('downloadCV');
