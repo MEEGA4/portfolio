@@ -47,6 +47,9 @@
 
 <body>
 
+  <!-- Top scroll progress bar -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- ========== SITE HEADER (status strip + nav) ========== -->
   <header class="site-header" id="siteHeader">
 
@@ -57,7 +60,7 @@
           <span class="statusbar__dot" aria-hidden="true"></span>
           BUILD &middot; SHIP &middot; REPEAT
         </span>
-        <span class="statusbar__meta">BILBAO 43.26&deg;N &middot; ES/EN</span>
+        <span class="statusbar__meta">BILBAO 43.26&deg;N &middot; <span id="liveClock">--:--:-- CET</span> &middot; ES/EN</span>
       </div>
     </div>
 
@@ -68,6 +71,7 @@
         <ul class="nav__links" id="navLinks">
           <li><a href="#hero" class="nav__link active">inicio</a></li>
           <li><a href="#about" class="nav__link">sobre_mi</a></li>
+          <li><a href="#experience" class="nav__link">experiencia</a></li>
           <li><a href="#projects" class="nav__link">proyectos</a></li>
           <li><a href="#skills" class="nav__link">skills</a></li>
           <li><a href="#education" class="nav__link">educacion</a></li>
@@ -89,10 +93,11 @@
   <div class="nav__mobile-menu" id="mobileMenu">
     <a href="#hero" class="nav__mobile-link"><span class="nav__mobile-index">00</span>inicio</a>
     <a href="#about" class="nav__mobile-link"><span class="nav__mobile-index">01</span>sobre mi</a>
-    <a href="#projects" class="nav__mobile-link"><span class="nav__mobile-index">02</span>proyectos</a>
-    <a href="#skills" class="nav__mobile-link"><span class="nav__mobile-index">03</span>skills</a>
-    <a href="#education" class="nav__mobile-link"><span class="nav__mobile-index">04</span>educacion</a>
-    <a href="#contact" class="nav__mobile-link"><span class="nav__mobile-index">05</span>contacto</a>
+    <a href="#experience" class="nav__mobile-link"><span class="nav__mobile-index">02</span>experiencia</a>
+    <a href="#projects" class="nav__mobile-link"><span class="nav__mobile-index">03</span>proyectos</a>
+    <a href="#skills" class="nav__mobile-link"><span class="nav__mobile-index">04</span>skills</a>
+    <a href="#education" class="nav__mobile-link"><span class="nav__mobile-index">05</span>educacion</a>
+    <a href="#contact" class="nav__mobile-link"><span class="nav__mobile-index">06</span>contacto</a>
     <button class="theme-toggle" id="themeToggleMobile" aria-label="Cambiar tema">
       <i class="fa-solid fa-sun"></i>
     </button>
@@ -101,42 +106,82 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="container hero__container">
-      <div class="hero__content cropframe">
-        <p class="hero__greeting reveal">REGISTRO&nbsp;&nbsp;//&nbsp;&nbsp;BILBAO, ES</p>
-        <h1 class="hero__name reveal reveal-delay-1">
-          Alejandro <span class="hero__name-last">Martinez Barba</span>
-        </h1>
-        <div class="hero__role reveal reveal-delay-2">
-          <span class="hero__role-prompt" aria-hidden="true">&gt;</span>
-          <span class="hero__role-text"></span><span class="cursor"></span>
+      <div class="hero__layout">
+        <div class="hero__content cropframe">
+          <p class="hero__greeting reveal">REGISTRO&nbsp;&nbsp;//&nbsp;&nbsp;BILBAO, ES</p>
+          <h1 class="hero__name reveal reveal-delay-1">
+            Alejandro <span class="hero__name-last">Martinez Barba</span>
+          </h1>
+          <div class="hero__role reveal reveal-delay-2">
+            <span class="hero__role-prompt" aria-hidden="true">&gt;</span>
+            <span class="hero__role-text"></span><span class="cursor"></span>
+          </div>
+          <p class="hero__description reveal reveal-delay-3">
+            Construyendo aplicaciones web full-stack y cualquier otro reto que se me proponga.
+            Apasionado por el codigo limpio y el desarrollo de software.
+          </p>
+          <div class="hero__ctas reveal reveal-delay-3">
+            <a href="#projects" class="btn-primary">
+              <span class="btn__bracket">[</span> ver proyectos <span class="btn__arrow">&rarr;</span> <span class="btn__bracket">]</span>
+            </a>
+            <a href="assets/Martinez_Barba_Alejandro_CV.pdf" class="btn-secondary" id="downloadCV"
+              download="Martinez_Barba_Alejandro_CV.pdf">
+              <span class="btn__bracket">[</span> descargar cv <span class="btn__arrow">&darr;</span> <span class="btn__bracket">]</span>
+            </a>
+          </div>
+          <div class="hero__socials reveal reveal-delay-4">
+            <a href="https://github.com/MEEGA4" class="hero__social-link" target="_blank" rel="noopener noreferrer"
+              aria-label="GitHub">
+              <i class="fa-brands fa-github"></i><span class="hero__social-label">gh</span>
+            </a>
+            <a href="https://www.linkedin.com/in/alejandro-mart%C3%ADnez-8bb700341" class="hero__social-link"
+              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i><span class="hero__social-label">in</span>
+            </a>
+            <a href="mailto:zarzaleja86@gmail.com" class="hero__social-link" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i><span class="hero__social-label">@</span>
+            </a>
+          </div>
+          <span class="hero__stamp" aria-hidden="true">43.26&deg;N&nbsp;&nbsp;2.95&deg;W &mdash; BILBAO, ES</span>
         </div>
-        <p class="hero__description reveal reveal-delay-3">
-          Construyendo aplicaciones web full-stack y cualquier otro reto que se me proponga.
-          Apasionado por el codigo limpio y el desarrollo de software.
-        </p>
-        <div class="hero__ctas reveal reveal-delay-3">
-          <a href="#projects" class="btn-primary">
-            <span class="btn__bracket">[</span> ver proyectos <span class="btn__arrow">&rarr;</span> <span class="btn__bracket">]</span>
-          </a>
-          <a href="assets/Martinez_Barba_Alejandro_CV.pdf" class="btn-secondary" id="downloadCV"
-            download="Martinez_Barba_Alejandro_CV.pdf">
-            <span class="btn__bracket">[</span> descargar cv <span class="btn__arrow">&darr;</span> <span class="btn__bracket">]</span>
-          </a>
+
+        <!-- Interactive Terminal / Profile Inspector -->
+        <div class="hero__terminal cropframe reveal reveal-delay-2" id="heroTerminal" aria-label="Terminal de perfil">
+          <div class="terminal__bar">
+            <div class="terminal__dots" aria-hidden="true">
+              <span class="terminal__dot terminal__dot--close"></span>
+              <span class="terminal__dot terminal__dot--min"></span>
+              <span class="terminal__dot terminal__dot--max"></span>
+            </div>
+            <div class="terminal__title">
+              <i class="fa-solid fa-code"></i> alejandro@deusto:~ (profile.json)
+            </div>
+            <span class="terminal__tag">LIVE</span>
+          </div>
+          <div class="terminal__body">
+            <pre class="terminal__pre"><code><span class="t-punct">{</span>
+  <span class="t-prop">"engineer"</span><span class="t-punct">:</span> <span class="t-str">"Alejandro Martinez Barba"</span><span class="t-punct">,</span>
+  <span class="t-prop">"location"</span><span class="t-punct">:</span> <span class="t-str">"Bilbao, ES"</span><span class="t-punct">,</span>
+  <span class="t-prop">"education"</span><span class="t-punct">:</span> <span class="t-punct">{</span>
+    <span class="t-prop">"degree"</span><span class="t-punct">:</span> <span class="t-str">"Ingenieria Informatica"</span><span class="t-punct">,</span>
+    <span class="t-prop">"school"</span><span class="t-punct">:</span> <span class="t-str">"Universidad de Deusto"</span><span class="t-punct">,</span>
+    <span class="t-prop">"status"</span><span class="t-punct">:</span> <span class="t-accent">"3er curso (en progreso)"</span>
+  <span class="t-punct">}</span><span class="t-punct">,</span>
+  <span class="t-prop">"focus"</span><span class="t-punct">:</span> <span class="t-punct">[</span><span class="t-str">"Full-Stack"</span><span class="t-punct">,</span> <span class="t-str">"APIs REST"</span><span class="t-punct">,</span> <span class="t-str">"Sistemas"</span><span class="t-punct">]</span><span class="t-punct">,</span>
+  <span class="t-prop">"core_stack"</span><span class="t-punct">:</span> <span class="t-punct">[</span>
+    <span class="t-str">"Java / Spring Boot"</span><span class="t-punct">,</span>
+    <span class="t-str">"Oracle SQL / MySQL"</span><span class="t-punct">,</span>
+    <span class="t-str">"Vue.js"</span><span class="t-punct">,</span> <span class="t-str">"Python"</span>
+  <span class="t-punct">]</span><span class="t-punct">,</span>
+  <span class="t-prop">"experience"</span><span class="t-punct">:</span> <span class="t-str">"Software Engineer (Practicas) @ Accenture"</span><span class="t-punct">,</span>
+  <span class="t-prop">"status"</span><span class="t-punct">:</span> <span class="t-highlight">"open_for_work"</span>
+<span class="t-punct">}</span></code></pre>
+            <div class="terminal__foot">
+              <span class="terminal__prompt-line"><span class="terminal__prompt-sym">&gt;</span> git status --short</span>
+              <span class="terminal__status-msg"><span class="terminal__status-indicator"></span> branch main: clean, ready to ship</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__socials reveal reveal-delay-4">
-          <a href="https://github.com/MEEGA4" class="hero__social-link" target="_blank" rel="noopener noreferrer"
-            aria-label="GitHub">
-            <i class="fa-brands fa-github"></i><span class="hero__social-label">gh</span>
-          </a>
-          <a href="https://www.linkedin.com/in/alejandro-mart%C3%ADnez-8bb700341" class="hero__social-link"
-            target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in"></i><span class="hero__social-label">in</span>
-          </a>
-          <a href="mailto:zarzaleja86@gmail.com" class="hero__social-link" aria-label="Email">
-            <i class="fa-solid fa-envelope"></i><span class="hero__social-label">@</span>
-          </a>
-        </div>
-        <span class="hero__stamp" aria-hidden="true">43.26&deg;N&nbsp;&nbsp;2.95&deg;W &mdash; BILBAO, ES</span>
       </div>
     </div>
   </section>
@@ -150,8 +195,29 @@
       </div>
       <div class="about__grid">
         <div class="about__aside reveal reveal--left">
-          <div class="about__plate cropframe">
-            <span class="about__monogram">[ A ]</span>
+          <div class="about__plate id-badge cropframe">
+            <div class="id-badge__header">
+              <span class="id-badge__title">DEUSTO // ENG-ID</span>
+              <span class="id-badge__chip" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
+            </div>
+            <div class="id-badge__body">
+              <div class="id-badge__avatar">
+                <span class="id-badge__monogram">AMB</span>
+                <span class="id-badge__grid" aria-hidden="true"></span>
+              </div>
+              <div class="id-badge__meta">
+                <span class="id-badge__name">A. MARTINEZ</span>
+                <span class="id-badge__code">REF. 2026-ENG</span>
+                <div class="id-badge__status">
+                  <span class="id-badge__led" aria-hidden="true"></span>
+                  <span>OPEN FOR WORK</span>
+                </div>
+              </div>
+            </div>
+            <div class="id-badge__footer">
+              <span class="id-badge__barcode" aria-hidden="true">||| | |||| || ||| | ||</span>
+              <span class="id-badge__sec">SEC-01</span>
+            </div>
           </div>
           <dl class="spec-list">
             <div class="spec-row">
@@ -168,7 +234,7 @@
             </div>
             <div class="spec-row">
               <dt class="spec-row__key">estado</dt>
-              <dd class="spec-row__val spec-row__val--accent">disponible</dd>
+              <dd class="spec-row__val spec-row__val--accent">open for work</dd>
             </div>
           </dl>
         </div>
@@ -190,15 +256,52 @@
               <span class="about__highlight-label">enfoque</span>
             </div>
             <div class="about__highlight">
-              <span class="about__highlight-value">625<span class="about__highlight-plus">+</span></span>
+              <span class="about__highlight-value"><span class="counter" data-target="625">0</span><span class="about__highlight-plus">+</span></span>
               <span class="about__highlight-label">commits</span>
             </div>
             <div class="about__highlight">
-              <span class="about__highlight-value">10<span class="about__highlight-plus">+</span></span>
+              <span class="about__highlight-value"><span class="counter" data-target="10">0</span><span class="about__highlight-plus">+</span></span>
               <span class="about__highlight-label">skills tecnicas</span>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__index">LOG.02</span>
+        <h2 class="section-header__title">Experiencia</h2>
+      </div>
+      <div class="experience__ledger">
+        <article class="experience__row reveal">
+          <div class="experience__when">
+            <span class="experience__node" aria-hidden="true"></span>
+            <span class="experience__date">JUN 2026 &mdash; JUN 2027</span>
+          </div>
+          <div class="experience__body">
+            <div class="experience__header">
+              <h3 class="experience__role">Desarrollador de Software</h3>
+              <span class="experience__company">Accenture</span>
+            </div>
+            <p class="experience__meta-sub">// Practicas en empresa &middot; Bilbao, ES</p>
+            <p class="experience__detail">
+              Desarrollo y mantenimiento de software empresarial en entorno profesional.
+              Trabajo activo con tecnologias Java y bases de datos relacionales Oracle SQL, optimizacion de consultas,
+              resolucion de incidencias y gestion integral del proyecto bajo metodologias agiles de equipo.
+            </p>
+            <div class="experience__tags">
+              <span class="tag">Java</span>
+              <span class="tag">Oracle SQL</span>
+              <span class="tag">Gestion de Proyectos</span>
+              <span class="tag">Enterprise Software</span>
+            </div>
+          </div>
+          <span class="experience__status">[ EN CURSO ]</span>
+        </article>
       </div>
     </div>
   </section>
@@ -210,7 +313,11 @@
       <div class="marquee__inner">
         <span class="marquee__item">Full-Stack Developer</span>
         <span class="marquee__separator">&middot;</span>
+        <span class="marquee__item">Accenture</span>
+        <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">Java</span>
+        <span class="marquee__separator">&middot;</span>
+        <span class="marquee__item">Oracle SQL</span>
         <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">Spring Boot</span>
         <span class="marquee__separator">&middot;</span>
@@ -219,14 +326,14 @@
         <span class="marquee__item">Python</span>
         <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">REST APIs</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">MySQL</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">MongoDB</span>
         <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">Full-Stack Developer</span>
         <span class="marquee__separator">&middot;</span>
+        <span class="marquee__item">Accenture</span>
+        <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">Java</span>
+        <span class="marquee__separator">&middot;</span>
+        <span class="marquee__item">Oracle SQL</span>
         <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">Spring Boot</span>
         <span class="marquee__separator">&middot;</span>
@@ -235,10 +342,6 @@
         <span class="marquee__item">Python</span>
         <span class="marquee__separator">&middot;</span>
         <span class="marquee__item">REST APIs</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">MySQL</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">MongoDB</span>
         <span class="marquee__separator">&middot;</span>
       </div>
     </div>
@@ -248,7 +351,7 @@
   <section class="projects" id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-header__index">LOG.02</span>
+        <span class="section-header__index">LOG.03</span>
         <h2 class="section-header__title">Proyectos</h2>
       </div>
       <div class="projects__grid">
@@ -335,7 +438,7 @@
   <section class="skills" id="skills">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-header__index">LOG.03</span>
+        <span class="section-header__index">LOG.04</span>
         <h2 class="section-header__title">Skills tecnicas</h2>
       </div>
 
@@ -349,93 +452,97 @@
 
       <div class="skills__grid">
         <!-- Languages -->
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #F7DF1E;">
           <i class="devicon-javascript-plain colored skill-card__icon"></i>
           <span class="skill-card__name">JavaScript</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #387EB8;">
           <i class="devicon-python-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Python</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #EA580C;">
           <i class="devicon-java-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Java</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #F80000;">
+          <i class="devicon-oracle-original colored skill-card__icon"></i>
+          <span class="skill-card__name">Oracle SQL</span>
+        </div>
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #659AD2;">
           <i class="devicon-c-plain colored skill-card__icon"></i>
           <span class="skill-card__name">C</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #00599C;">
           <i class="devicon-cplusplus-plain colored skill-card__icon"></i>
           <span class="skill-card__name">C++</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #E34F26;">
           <i class="devicon-html5-plain colored skill-card__icon"></i>
           <span class="skill-card__name">HTML5</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #1572B6;">
           <i class="devicon-css3-plain colored skill-card__icon"></i>
           <span class="skill-card__name">CSS3</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages">
+        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #4479A1;">
           <i class="devicon-mysql-plain colored skill-card__icon"></i>
           <span class="skill-card__name">SQL</span>
         </div>
 
         <!-- Frameworks -->
-        <div class="skill-card cropframe reveal" data-category="frameworks">
+        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #42B883;">
           <i class="devicon-vuejs-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Vue.js</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="frameworks">
+        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #6DB33F;">
           <i class="devicon-spring-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Spring Boot</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="frameworks">
+        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #5FA04E;">
           <i class="devicon-nodejs-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Node.js</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="frameworks">
+        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #85EA2D;">
           <i class="devicon-swagger-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Swagger</span>
         </div>
 
         <!-- Tools -->
-        <div class="skill-card cropframe reveal" data-category="tools">
+        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #F05032;">
           <i class="devicon-git-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Git</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools">
+        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #EDE8DD;">
           <i class="devicon-github-original skill-card__icon"></i>
           <span class="skill-card__name">GitHub</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools">
+        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #00758F;">
           <i class="devicon-mysql-plain colored skill-card__icon"></i>
           <span class="skill-card__name">MySQL</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools">
+        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #47A248;">
           <i class="devicon-mongodb-plain colored skill-card__icon"></i>
           <span class="skill-card__name">MongoDB</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools">
+        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #007ACC;">
           <i class="devicon-vscode-plain colored skill-card__icon"></i>
           <span class="skill-card__name">VS Code</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools">
+        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #2496ED;">
           <i class="devicon-docker-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Docker</span>
         </div>
 
         <!-- Concepts -->
-        <div class="skill-card cropframe reveal" data-category="concepts">
+        <div class="skill-card cropframe reveal" data-category="concepts" style="--brand-color: #E89A4A;">
           <i class="fa-solid fa-vial skill-card__icon skill-card__icon--fa"></i>
           <span class="skill-card__name">Unit Testing</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="concepts">
+        <div class="skill-card cropframe reveal" data-category="concepts" style="--brand-color: #E89A4A;">
           <i class="fa-solid fa-cubes skill-card__icon skill-card__icon--fa"></i>
           <span class="skill-card__name">POO</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="concepts">
+        <div class="skill-card cropframe reveal" data-category="concepts" style="--brand-color: #E89A4A;">
           <i class="fa-solid fa-plug skill-card__icon skill-card__icon--fa"></i>
           <span class="skill-card__name">APIs REST</span>
         </div>
@@ -447,7 +554,7 @@
   <section class="education" id="education">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-header__index">LOG.04</span>
+        <span class="section-header__index">LOG.05</span>
         <h2 class="section-header__title">Educacion</h2>
       </div>
       <div class="education__ledger">
@@ -489,20 +596,28 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-header__index">LOG.05</span>
+        <span class="section-header__index">LOG.06</span>
         <h2 class="section-header__title">Contacto</h2>
       </div>
       <div class="contact__block cropframe reveal">
-        <p class="contact__prompt" aria-hidden="true">&gt; open to: practicas &middot; junior full-stack</p>
+        <p class="contact__prompt" aria-hidden="true">&gt; open for work &middot; full-stack developer</p>
         <p class="contact__text">
-          Actualmente estoy abierto a oportunidades de practicas y posiciones junior.
-          Si tienes un proyecto interesante o una oportunidad, no dudes en contactarme.
+          Actualmente realizando practicas en Accenture y siempre abierto a conectar, colaborar
+          en nuevos proyectos y explorar retos profesionales como desarrollador de software.
         </p>
-        <a href="mailto:zarzaleja86@gmail.com" class="contact__email-btn">
-          <span class="btn__bracket">[</span>
-          <i class="fa-solid fa-envelope"></i> enviar email <span class="btn__arrow">&rarr;</span> zarzaleja86@gmail.com
-          <span class="btn__bracket">]</span>
-        </a>
+        <div class="contact__actions">
+          <a href="mailto:zarzaleja86@gmail.com" class="contact__email-btn">
+            <span class="btn__bracket">[</span>
+            <i class="fa-solid fa-envelope"></i> enviar email <span class="btn__arrow">&rarr;</span> zarzaleja86@gmail.com
+            <span class="btn__bracket">]</span>
+          </a>
+          <button class="contact__copy-btn" id="copyEmailBtn" type="button" aria-label="Copiar direccion de email" data-email="zarzaleja86@gmail.com">
+            <span class="btn__bracket">[</span>
+            <i class="fa-regular fa-copy" id="copyIcon"></i> <span id="copyText">copiar</span>
+            <span class="btn__bracket">]</span>
+            <span class="copy-tooltip" id="copyTooltip" role="status" aria-live="polite">¡Copiado! 📋</span>
+          </button>
+        </div>
         <div class="contact__socials">
           <a href="https://github.com/MEEGA4" class="hero__social-link" target="_blank" rel="noopener noreferrer"
             aria-label="GitHub">

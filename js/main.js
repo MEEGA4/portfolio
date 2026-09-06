@@ -12,6 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillsFilter();
   initTypingEffect();
   initCVDownload();
+  initScrollProgress();
+  initLiveClock();
+  initSpotlight();
+  initCounterAnimation();
+  initCopyEmail();
   logConsoleSignature();
 });
 
@@ -197,7 +202,178 @@ function initSkillsFilter() {
   });
 }
 
-// ===== 6. CONSOLE SIGNATURE =====
+// ===== 6. SCROLL PROGRESS BAR =====
+
+function initScrollProgress() {
+  const bar = document.getElementById('scrollProgress');
+  if (!bar) return;
+
+  const updateProgress = () => {
+    const scrollPx = document.documentElement.scrollTop || document.body.scrollTop;
+    const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = winHeight > 0 ? (scrollPx / winHeight) * 100 : 0;
+    bar.style.width = `${Math.min(100, Math.max(0, scrolled))}%`;
+  };
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+}
+
+// ===== 7. LIVE CLOCK (BILBAO CET) =====
+
+function initLiveClock() {
+  const clockEl = document.getElementById('liveClock');
+  if (!clockEl) return;
+
+  const updateClock = () => {
+    const now = new Date();
+    try {
+      const timeStr = new Intl.DateTimeFormat('es-ES', {
+        timeZone: 'Europe/Madrid',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      }).format(now);
+      clockEl.textContent = `${timeStr} CET`;
+    } catch {
+      const pad = n => String(n).padStart(2, '0');
+      clockEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())} CET`;
+    }
+  };
+
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
+// ===== 8. HERO SPOTLIGHT =====
+
+function initSpotlight() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  let ticking = false;
+
+  hero.addEventListener('mousemove', (e) => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        hero.style.setProperty('--mouse-x', `${x.toFixed(1)}%`);
+        hero.style.setProperty('--mouse-y', `${y.toFixed(1)}%`);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// ===== 9. ANIMATED STATS COUNTERS =====
+
+function initCounterAnimation() {
+  const counters = document.querySelectorAll('.counter[data-target]');
+  if (!counters.length) return;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+
+    const duration = 1500;
+    const startTime = performance.now();
+
+    const update = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Quartic ease out
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(easeProgress * target);
+      el.textContent = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target;
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach(counter => observer.observe(counter));
+}
+
+// ===== 10. COPY EMAIL BUTTON =====
+
+function initCopyEmail() {
+  const btn = document.getElementById('copyEmailBtn');
+  const tooltip = document.getElementById('copyTooltip');
+  const icon = document.getElementById('copyIcon');
+  const text = document.getElementById('copyText');
+  if (!btn) return;
+
+  const showCopiedFeedback = () => {
+    btn.classList.add('copied');
+    if (icon) icon.className = 'fa-solid fa-check';
+    if (text) text.textContent = 'copiado';
+    if (tooltip) tooltip.classList.add('show');
+
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      if (icon) icon.className = 'fa-regular fa-copy';
+      if (text) text.textContent = 'copiar';
+      if (tooltip) tooltip.classList.remove('show');
+    }, 2200);
+  };
+
+  btn.addEventListener('click', async () => {
+    const email = btn.getAttribute('data-email') || 'zarzaleja86@gmail.com';
+    let copied = false;
+
+    if (navigator.clipboard) {
+      try {
+        await navigator.clipboard.writeText(email);
+        copied = true;
+      } catch {
+        copied = false;
+      }
+    }
+
+    if (!copied) {
+      // Fallback via temporary textarea
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        copied = document.execCommand('copy');
+        document.body.removeChild(textarea);
+      } catch {
+        copied = false;
+      }
+    }
+
+    if (copied) {
+      showCopiedFeedback();
+    } else {
+      window.location.href = `mailto:${email}`;
+    }
+  });
+}
+
+// ===== 11. CONSOLE SIGNATURE =====
 
 function logConsoleSignature() {
   const mono = 'font-family: "JetBrains Mono", monospace;';
@@ -209,7 +385,7 @@ function logConsoleSignature() {
   );
 }
 
-// ===== 7. CV DOWNLOAD =====
+// ===== 12. CV DOWNLOAD =====
 
 function initCVDownload() {
   const btn = document.getElementById('downloadCV');
