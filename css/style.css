@@ -1,7 +1,7 @@
 /* =============================================
    REGISTRO // Cuaderno de Ingenieria
    Portfolio - Alejandro Martinez Barba
-   Refined terminal-logbook: Fraunces + JetBrains Mono + Inter,
+   Refined terminal-logbook: Bricolage Grotesque + JetBrains Mono + Inter,
    warm amber on warm near-black, ruled-notebook layout.
    ============================================= */
 
@@ -452,6 +452,26 @@ section { padding: 110px 0; }
 }
 .nav__mobile-menu.open { display: flex; }
 
+.nav__mobile-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border-hover);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+
+.nav__mobile-close:hover { border-color: var(--accent); color: var(--accent); }
+
+:is(a, button):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .nav__mobile-link {
   display: flex;
   align-items: baseline;
@@ -604,7 +624,6 @@ section { padding: 110px 0; }
 .t-str { color: #fabd2f; }
 [data-theme="light"] .t-str { color: #b45309; }
 
-.t-accent { color: var(--accent); }
 .t-highlight {
   color: var(--selection-text);
   background: var(--accent);
@@ -677,7 +696,7 @@ section { padding: 110px 0; }
   font-family: var(--font-mono);
   font-size: clamp(0.95rem, 2vw, 1.2rem);
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   min-height: 1.8em;
   display: flex;
   align-items: baseline;
@@ -687,21 +706,11 @@ section { padding: 110px 0; }
   color: var(--accent);
   font-weight: 700;
 }
-.cursor {
-  display: inline-block;
-  width: 0.55ch;
-  height: 1.05em;
-  background-color: var(--accent);
-  margin-left: 2px;
-  transform: translateY(0.12em);
-  animation: blink 1.1s ease infinite;
-}
-
 .hero__description {
   font-size: 1.05rem;
   color: var(--text-secondary);
   max-width: 48ch;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
   line-height: 1.75;
 }
 .hero__description::before {
@@ -714,7 +723,7 @@ section { padding: 110px 0; }
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 22px;
 }
 
 .hero__socials {
@@ -752,7 +761,7 @@ section { padding: 110px 0; }
 
 .hero__stamp {
   display: block;
-  margin-top: 38px;
+  margin-top: 24px;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
   letter-spacing: 0.14em;
@@ -912,11 +921,6 @@ section { padding: 110px 0; }
   letter-spacing: 0.1em;
 }
 
-.counter {
-  font-variant-numeric: tabular-nums;
-  display: inline-block;
-}
-
 /* leader-dot spec rows */
 .spec-list {
   display: flex;
@@ -965,90 +969,7 @@ section { padding: 110px 0; }
   margin-right: 10px;
 }
 
-.about__highlights {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 36px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 2px;
-}
-.about__highlight {
-  padding: 22px 20px;
-  text-align: left;
-  border-left: 1px solid var(--border);
-  transition: background-color 0.25s ease;
-}
-.about__highlight:first-child { border-left: none; }
-.about__highlight:hover { background: var(--bg-card-hover); }
-
-.about__highlight-value {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-.about__highlight-plus { color: var(--accent); }
-.about__highlight-label {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-/* ===== 9. MARQUEE ===== */
-
-.marquee {
-  display: flex;
-  align-items: stretch;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--bg-secondary);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.marquee__caption {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  padding: 16px 24px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  border-right: 1px solid var(--border);
-  background: var(--bg-primary);
-}
-
-.marquee__viewport { overflow: hidden; flex: 1; display: flex; align-items: center; }
-
-.marquee__inner {
-  display: flex;
-  gap: 20px;
-  white-space: nowrap;
-  animation: marqueeScroll 30s linear infinite;
-  width: max-content;
-  padding-left: 20px;
-}
-
-.marquee__item {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-.marquee__separator { color: var(--accent); font-family: var(--font-mono); }
-
-.marquee:hover .marquee__inner { animation-play-state: paused; }
-
-/* ===== 10. EXPERIENCE ===== */
+/* ===== 9. EXPERIENCE ===== */
 
 .experience {
   transition: background-color 0.3s ease;
@@ -1156,7 +1077,7 @@ section { padding: 110px 0; }
   font-weight: 600;
 }
 
-/* ===== 11. PROJECTS ===== */
+/* ===== 10. PROJECTS ===== */
 
 .projects__grid {
   display: flex;
@@ -1357,45 +1278,6 @@ section { padding: 110px 0; }
   transition: background-color 0.3s ease;
 }
 
-.skills__categories {
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 44px;
-}
-.skills__category-btn {
-  position: relative;
-  background: transparent;
-  border: none;
-  padding: 4px 0 6px;
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: color 0.25s ease;
-}
-.skills__category-btn:not(:last-child)::before {
-  /* slash separator */
-  content: '/';
-  position: absolute;
-  right: -11px;
-  color: var(--border-hover);
-}
-.skills__category-btn:hover { color: var(--text-primary); }
-.skills__category-btn.active { color: var(--accent); }
-.skills__category-btn.active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--accent);
-}
-
 .skills__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
@@ -1436,11 +1318,6 @@ section { padding: 110px 0; }
   text-transform: uppercase;
   color: var(--text-secondary);
   text-align: center;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ===== 12. EDUCATION ===== */
@@ -1672,8 +1549,6 @@ section { padding: 110px 0; }
 
 /* ===== 15. KEYFRAMES ===== */
 
-@keyframes blink { 0%, 45% { opacity: 1; } 55%, 100% { opacity: 0; } }
-@keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
 /* ===== 16. LEFT LEDGER RULE (desktop asymmetry) ===== */
@@ -1703,6 +1578,9 @@ section { padding: 110px 0; }
 /* ===== 17. MEDIA QUERIES ===== */
 
 @media (max-width: 900px) {
+  .nav__links { display: none; }
+  .nav__hamburger { display: block; }
+
   .hero__layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1712,9 +1590,6 @@ section { padding: 110px 0; }
 
 @media (max-width: 768px) {
   section { padding: 80px 0; }
-
-  .nav__links { display: none; }
-  .nav__hamburger { display: block; }
 
   .about__grid { grid-template-columns: 1fr; gap: 36px; }
   .about__aside { flex-direction: row; gap: 24px; align-items: stretch; }
@@ -1748,15 +1623,10 @@ section { padding: 110px 0; }
   .btn-primary, .btn-secondary { justify-content: center; }
 
   .about__aside { flex-direction: column; align-items: flex-start; }
-  .about__plate { width: 100px; }
-  .about__highlights { grid-template-columns: 1fr; }
-  .about__highlight { border-left: none; border-top: 1px solid var(--border); }
-  .about__highlight:first-child { border-top: none; }
+  .about__plate { width: min(100%, 220px); }
 
   .skills__grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .skills__categories { gap: 16px; }
 
-  .marquee__caption { padding: 12px 16px; font-size: 0.6875rem; }
 
   .contact__email-btn { font-size: 0.6875rem; padding: 12px 16px; }
   .section-header { flex-direction: column; gap: 8px; align-items: flex-start; }
@@ -1771,7 +1641,5 @@ section { padding: 110px 0; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .marquee__inner { animation: none; }
-  .cursor { animation: none; opacity: 1; }
   .statusbar__dot { animation: none; }
 }

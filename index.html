@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Portfolio de Alejandro Martinez Barba - Ingenieria Informatica, Universidad de Deusto. Desarrollo full-stack.">
-  <title>Alejandro Martinez Barba — Registro</title>
+    content="Portfolio de Alejandro Martínez Barba - Ingeniería Informática, Universidad de Deusto. Desarrollo full-stack.">
+  <title>Alejandro Martínez Barba — Desarrollador full-stack</title>
 
   <!-- Favicon + browser chrome color -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -16,16 +16,16 @@
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://meega4.github.io/portfolio/">
-  <meta property="og:title" content="Alejandro Martinez Barba — Registro">
+  <meta property="og:title" content="Alejandro Martínez Barba — Desarrollador full-stack">
   <meta property="og:description"
-    content="Desarrollador full-stack. Ingenieria Informatica en la Universidad de Deusto. Java, Spring Boot, Vue.js, Python.">
+    content="Desarrollador full-stack. Ingeniería Informática en la Universidad de Deusto. Java, Spring Boot, Vue.js, Python.">
   <meta property="og:image" content="https://meega4.github.io/portfolio/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alejandro Martinez Barba — Registro">
+  <meta name="twitter:title" content="Alejandro Martínez Barba — Desarrollador full-stack">
   <meta name="twitter:description"
-    content="Desarrollador full-stack. Ingenieria Informatica en la Universidad de Deusto. Java, Spring Boot, Vue.js, Python.">
+    content="Desarrollador full-stack. Ingeniería Informática en la Universidad de Deusto. Java, Spring Boot, Vue.js, Python.">
   <meta name="twitter:image" content="https://meega4.github.io/portfolio/assets/og-image.png">
 
   <!-- Google Fonts: Bricolage Grotesque (display) + JetBrains Mono (meta) + Inter (body) -->
@@ -60,7 +60,7 @@
           <span class="statusbar__dot" aria-hidden="true"></span>
           BUILD &middot; SHIP &middot; REPEAT
         </span>
-        <span class="statusbar__meta">BILBAO 43.26&deg;N &middot; <span id="liveClock">--:--:-- CET</span> &middot; ES/EN</span>
+        <span class="statusbar__meta">BILBAO 43.26&deg;N &middot; <span id="liveClock">--:--:--</span> &middot; ES/EN</span>
       </div>
     </div>
 
@@ -70,11 +70,11 @@
         <a href="#hero" class="nav__logo">AMB<span class="nav__logo-cursor">_</span></a>
         <ul class="nav__links" id="navLinks">
           <li><a href="#hero" class="nav__link active">inicio</a></li>
-          <li><a href="#about" class="nav__link">sobre_mi</a></li>
-          <li><a href="#experience" class="nav__link">experiencia</a></li>
           <li><a href="#projects" class="nav__link">proyectos</a></li>
-          <li><a href="#skills" class="nav__link">skills</a></li>
-          <li><a href="#education" class="nav__link">educacion</a></li>
+          <li><a href="#about" class="nav__link">sobre_mí</a></li>
+          <li><a href="#experience" class="nav__link">experiencia</a></li>
+          <li><a href="#skills" class="nav__link">tecnologías</a></li>
+          <li><a href="#education" class="nav__link">educación</a></li>
           <li><a href="#contact" class="nav__link">contacto</a></li>
           <li>
             <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
@@ -82,7 +82,7 @@
             </button>
           </li>
         </ul>
-        <button class="nav__hamburger" id="hamburger" aria-label="Abrir menu">
+        <button class="nav__hamburger" id="hamburger" type="button" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -90,15 +90,18 @@
   </header>
 
   <!-- Mobile Menu -->
-  <div class="nav__mobile-menu" id="mobileMenu">
+  <div class="nav__mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación" aria-hidden="true">
+    <button class="nav__mobile-close" id="mobileMenuClose" type="button" aria-label="Cerrar menú">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
     <a href="#hero" class="nav__mobile-link"><span class="nav__mobile-index">00</span>inicio</a>
-    <a href="#about" class="nav__mobile-link"><span class="nav__mobile-index">01</span>sobre mi</a>
-    <a href="#experience" class="nav__mobile-link"><span class="nav__mobile-index">02</span>experiencia</a>
-    <a href="#projects" class="nav__mobile-link"><span class="nav__mobile-index">03</span>proyectos</a>
-    <a href="#skills" class="nav__mobile-link"><span class="nav__mobile-index">04</span>skills</a>
-    <a href="#education" class="nav__mobile-link"><span class="nav__mobile-index">05</span>educacion</a>
+    <a href="#projects" class="nav__mobile-link"><span class="nav__mobile-index">01</span>proyectos</a>
+    <a href="#about" class="nav__mobile-link"><span class="nav__mobile-index">02</span>sobre mí</a>
+    <a href="#experience" class="nav__mobile-link"><span class="nav__mobile-index">03</span>experiencia</a>
+    <a href="#skills" class="nav__mobile-link"><span class="nav__mobile-index">04</span>tecnologías</a>
+    <a href="#education" class="nav__mobile-link"><span class="nav__mobile-index">05</span>educación</a>
     <a href="#contact" class="nav__mobile-link"><span class="nav__mobile-index">06</span>contacto</a>
-    <button class="theme-toggle" id="themeToggleMobile" aria-label="Cambiar tema">
+    <button class="theme-toggle" id="themeToggleMobile" type="button" aria-label="Cambiar tema">
       <i class="fa-solid fa-sun"></i>
     </button>
   </div>
@@ -110,26 +113,29 @@
         <div class="hero__content cropframe">
           <p class="hero__greeting reveal">REGISTRO&nbsp;&nbsp;//&nbsp;&nbsp;BILBAO, ES</p>
           <h1 class="hero__name reveal reveal-delay-1">
-            Alejandro <span class="hero__name-last">Martinez Barba</span>
+            Alejandro <span class="hero__name-last">Martínez Barba</span>
           </h1>
           <div class="hero__role reveal reveal-delay-2">
             <span class="hero__role-prompt" aria-hidden="true">&gt;</span>
-            <span class="hero__role-text"></span><span class="cursor"></span>
+            <span class="hero__role-text">Desarrollador full-stack · Bilbao</span>
           </div>
           <p class="hero__description reveal reveal-delay-3">
-            Construyendo aplicaciones web full-stack y cualquier otro reto que se me proponga.
-            Apasionado por el codigo limpio y el desarrollo de software.
+            Estudio Ingeniería Informática en Deusto y desarrollo aplicaciones web con APIs REST y bases de datos.
+            Actualmente trabajo con Java y Oracle SQL durante mis prácticas en Accenture.
           </p>
           <div class="hero__ctas reveal reveal-delay-3">
             <a href="#projects" class="btn-primary">
               <span class="btn__bracket">[</span> ver proyectos <span class="btn__arrow">&rarr;</span> <span class="btn__bracket">]</span>
             </a>
-            <a href="assets/Martinez_Barba_Alejandro_CV.pdf" class="btn-secondary" id="downloadCV"
-              download="Martinez_Barba_Alejandro_CV.pdf">
-              <span class="btn__bracket">[</span> descargar cv <span class="btn__arrow">&darr;</span> <span class="btn__bracket">]</span>
+            <a href="#contact" class="btn-secondary">
+              <span class="btn__bracket">[</span> contactar <span class="btn__arrow">&rarr;</span> <span class="btn__bracket">]</span>
             </a>
           </div>
           <div class="hero__socials reveal reveal-delay-4">
+            <a href="assets/Martinez_Barba_Alejandro_CV.pdf" class="hero__social-link" id="downloadCV"
+              download="Martinez_Barba_Alejandro_CV.pdf" aria-label="Descargar CV">
+              <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i><span class="hero__social-label">CV</span>
+            </a>
             <a href="https://github.com/MEEGA4" class="hero__social-link" target="_blank" rel="noopener noreferrer"
               aria-label="GitHub">
               <i class="fa-brands fa-github"></i><span class="hero__social-label">gh</span>
@@ -145,7 +151,7 @@
           <span class="hero__stamp" aria-hidden="true">43.26&deg;N&nbsp;&nbsp;2.95&deg;W &mdash; BILBAO, ES</span>
         </div>
 
-        <!-- Interactive Terminal / Profile Inspector -->
+        <!-- Profile Inspector -->
         <div class="hero__terminal cropframe reveal reveal-delay-2" id="heroTerminal" aria-label="Terminal de perfil">
           <div class="terminal__bar">
             <div class="terminal__dots" aria-hidden="true">
@@ -160,20 +166,9 @@
           </div>
           <div class="terminal__body">
             <pre class="terminal__pre"><code><span class="t-punct">{</span>
-  <span class="t-prop">"engineer"</span><span class="t-punct">:</span> <span class="t-str">"Alejandro Martinez Barba"</span><span class="t-punct">,</span>
   <span class="t-prop">"location"</span><span class="t-punct">:</span> <span class="t-str">"Bilbao, ES"</span><span class="t-punct">,</span>
-  <span class="t-prop">"education"</span><span class="t-punct">:</span> <span class="t-punct">{</span>
-    <span class="t-prop">"degree"</span><span class="t-punct">:</span> <span class="t-str">"Ingenieria Informatica"</span><span class="t-punct">,</span>
-    <span class="t-prop">"school"</span><span class="t-punct">:</span> <span class="t-str">"Universidad de Deusto"</span><span class="t-punct">,</span>
-    <span class="t-prop">"status"</span><span class="t-punct">:</span> <span class="t-accent">"3er curso (en progreso)"</span>
-  <span class="t-punct">}</span><span class="t-punct">,</span>
-  <span class="t-prop">"focus"</span><span class="t-punct">:</span> <span class="t-punct">[</span><span class="t-str">"Full-Stack"</span><span class="t-punct">,</span> <span class="t-str">"APIs REST"</span><span class="t-punct">,</span> <span class="t-str">"Sistemas"</span><span class="t-punct">]</span><span class="t-punct">,</span>
-  <span class="t-prop">"core_stack"</span><span class="t-punct">:</span> <span class="t-punct">[</span>
-    <span class="t-str">"Java / Spring Boot"</span><span class="t-punct">,</span>
-    <span class="t-str">"Oracle SQL / MySQL"</span><span class="t-punct">,</span>
-    <span class="t-str">"Vue.js"</span><span class="t-punct">,</span> <span class="t-str">"Python"</span>
-  <span class="t-punct">]</span><span class="t-punct">,</span>
-  <span class="t-prop">"experience"</span><span class="t-punct">:</span> <span class="t-str">"Software Engineer (Practicas) @ Accenture"</span><span class="t-punct">,</span>
+  <span class="t-prop">"current"</span><span class="t-punct">:</span> <span class="t-str">"Prácticas en Accenture"</span><span class="t-punct">,</span>
+  <span class="t-prop">"interest"</span><span class="t-punct">:</span> <span class="t-str">"Desarrollo full-stack"</span><span class="t-punct">,</span>
   <span class="t-prop">"status"</span><span class="t-punct">:</span> <span class="t-highlight">"open_for_work"</span>
 <span class="t-punct">}</span></code></pre>
             <div class="terminal__foot">
@@ -186,172 +181,11 @@
     </div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-header__index">LOG.01</span>
-        <h2 class="section-header__title">Sobre mi</h2>
-      </div>
-      <div class="about__grid">
-        <div class="about__aside reveal reveal--left">
-          <div class="about__plate id-badge cropframe">
-            <div class="id-badge__header">
-              <span class="id-badge__title">DEUSTO // ENG-ID</span>
-              <span class="id-badge__chip" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
-            </div>
-            <div class="id-badge__body">
-              <div class="id-badge__avatar">
-                <span class="id-badge__monogram">AMB</span>
-                <span class="id-badge__grid" aria-hidden="true"></span>
-              </div>
-              <div class="id-badge__meta">
-                <span class="id-badge__name">A. MARTINEZ</span>
-                <span class="id-badge__code">REF. 2026-ENG</span>
-                <div class="id-badge__status">
-                  <span class="id-badge__led" aria-hidden="true"></span>
-                  <span>OPEN FOR WORK</span>
-                </div>
-              </div>
-            </div>
-            <div class="id-badge__footer">
-              <span class="id-badge__barcode" aria-hidden="true">||| | |||| || ||| | ||</span>
-              <span class="id-badge__sec">SEC-01</span>
-            </div>
-          </div>
-          <dl class="spec-list">
-            <div class="spec-row">
-              <dt class="spec-row__key">ubicacion</dt>
-              <dd class="spec-row__val">Bilbao, ES</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-row__key">enfoque</dt>
-              <dd class="spec-row__val">Full-Stack</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-row__key">idiomas</dt>
-              <dd class="spec-row__val">ES / EN</dd>
-            </div>
-            <div class="spec-row">
-              <dt class="spec-row__key">estado</dt>
-              <dd class="spec-row__val spec-row__val--accent">open for work</dd>
-            </div>
-          </dl>
-        </div>
-        <div class="about__text">
-          <p class="reveal"><span class="about__pindex">.01</span>
-            Soy estudiante de Ingenieria Informatica en la Universidad de Deusto, apasionado por
-            construir software que resuelva problemas reales. Disfruto trabajando en todo el stack,
-            desde el diseno de interfaces intuitivas hasta la arquitectura de sistemas backend robustos y
-            cualquier problema pendiente por resolver.
-          </p>
-          <p class="reveal reveal-delay-1"><span class="about__pindex">.02</span>
-            A traves de mis asignaturas he adquirido experiencia practica con frameworks modernos y
-            flujos de trabajo de desarrollo colaborativo, bases de datos y diseno software. Me desenvuelvo
-            bien en equipo y me motiva transformar ideas complejas en aplicaciones funcionales y bien acabadas.
-          </p>
-          <div class="about__highlights cropframe reveal reveal-delay-2">
-            <div class="about__highlight">
-              <span class="about__highlight-value">Full-Stack</span>
-              <span class="about__highlight-label">enfoque</span>
-            </div>
-            <div class="about__highlight">
-              <span class="about__highlight-value"><span class="counter" data-target="625">0</span><span class="about__highlight-plus">+</span></span>
-              <span class="about__highlight-label">commits</span>
-            </div>
-            <div class="about__highlight">
-              <span class="about__highlight-value"><span class="counter" data-target="10">0</span><span class="about__highlight-plus">+</span></span>
-              <span class="about__highlight-label">skills tecnicas</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EXPERIENCE ========== -->
-  <section class="experience" id="experience">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-header__index">LOG.02</span>
-        <h2 class="section-header__title">Experiencia</h2>
-      </div>
-      <div class="experience__ledger">
-        <article class="experience__row reveal">
-          <div class="experience__when">
-            <span class="experience__node" aria-hidden="true"></span>
-            <span class="experience__date">JUN 2026 &mdash; JUN 2027</span>
-          </div>
-          <div class="experience__body">
-            <div class="experience__header">
-              <h3 class="experience__role">Desarrollador de Software</h3>
-              <span class="experience__company">Accenture</span>
-            </div>
-            <p class="experience__meta-sub">// Practicas en empresa &middot; Bilbao, ES</p>
-            <p class="experience__detail">
-              Desarrollo y mantenimiento de software empresarial en entorno profesional.
-              Trabajo activo con tecnologias Java y bases de datos relacionales Oracle SQL, optimizacion de consultas,
-              resolucion de incidencias y gestion integral del proyecto bajo metodologias agiles de equipo.
-            </p>
-            <div class="experience__tags">
-              <span class="tag">Java</span>
-              <span class="tag">Oracle SQL</span>
-              <span class="tag">Gestion de Proyectos</span>
-              <span class="tag">Enterprise Software</span>
-            </div>
-          </div>
-          <span class="experience__status">[ EN CURSO ]</span>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== MARQUEE ========== -->
-  <div class="marquee">
-    <span class="marquee__caption" aria-hidden="true">STACK //</span>
-    <div class="marquee__viewport">
-      <div class="marquee__inner">
-        <span class="marquee__item">Full-Stack Developer</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Accenture</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Java</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Oracle SQL</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Spring Boot</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Vue.js</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Python</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">REST APIs</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Full-Stack Developer</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Accenture</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Java</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Oracle SQL</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Spring Boot</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Vue.js</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">Python</span>
-        <span class="marquee__separator">&middot;</span>
-        <span class="marquee__item">REST APIs</span>
-        <span class="marquee__separator">&middot;</span>
-      </div>
-    </div>
-  </div>
-
   <!-- ========== PROJECTS ========== -->
   <section class="projects" id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-header__index">LOG.03</span>
+        <span class="section-header__index">LOG.01</span>
         <h2 class="section-header__title">Proyectos</h2>
       </div>
       <div class="projects__grid">
@@ -369,9 +203,9 @@
             </div>
             <h3 class="project-card__title">LinkAuto</h3>
             <p class="project-card__description">
-              Red social para entusiastas del automovilismo con perfiles de usuario, comparticion
-              de vehiculos e interaccion comunitaria. Desarrollada con una API REST en Spring Boot
-              y un cliente web, respaldada por MySQL. Mas de 526 commits de desarrollo colaborativo.
+              Red social para entusiastas del automovilismo con perfiles de usuario, compartición
+              de vehículos e interacción comunitaria. Desarrollada con una API REST en Spring Boot
+              y un cliente web, respaldada por MySQL. Más de 526 commits de desarrollo colaborativo.
             </p>
             <div class="project-card__tags">
               <span class="tag">Java</span>
@@ -397,12 +231,12 @@
           </div>
           <div class="project-card__content">
             <div class="project-card__meta">
-              <span class="project-card__course">#ingenieria_web</span>
+              <span class="project-card__course">#ingeniería_web</span>
               <span class="project-card__ref">REF. 2024</span>
             </div>
             <h3 class="project-card__title">Tabacos-Manolo</h3>
             <p class="project-card__description">
-              Aplicacion web full-stack construida con un frontend reactivo en Vue.js y un backend
+              Aplicación web full-stack construida con un frontend reactivo en Vue.js y un backend
               en Python. Combina una interfaz de usuario moderna con procesamiento del lado del servidor
               para ofrecer una experiencia web completa y funcional.
             </p>
@@ -424,7 +258,7 @@
 
         <!-- Ghost entry: next log -->
         <a href="https://github.com/MEEGA4" class="project-ghost reveal" target="_blank" rel="noopener noreferrer">
-          <span class="project-ghost__index">fig.03 &mdash; proxima entrada&hellip;</span>
+          <span class="project-ghost__index">fig.03 &mdash; próxima entrada&hellip;</span>
           <span class="project-ghost__link">
             <i class="fa-brands fa-github"></i> ver todo en github.com/MEEGA4 <span class="btn__arrow">&rarr;</span>
           </span>
@@ -434,115 +268,157 @@
     </div>
   </section>
 
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__index">LOG.02</span>
+        <h2 class="section-header__title">Sobre mí</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__aside reveal reveal--left">
+          <div class="about__plate id-badge cropframe">
+            <div class="id-badge__header">
+              <span class="id-badge__title">DEUSTO // ENG-ID</span>
+              <span class="id-badge__chip" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
+            </div>
+            <div class="id-badge__body">
+              <div class="id-badge__avatar">
+                <span class="id-badge__monogram">AMB</span>
+                <span class="id-badge__grid" aria-hidden="true"></span>
+              </div>
+              <div class="id-badge__meta">
+                <span class="id-badge__name">A. MARTÍNEZ</span>
+                <span class="id-badge__code">REF. 2026-ENG</span>
+                <div class="id-badge__status">
+                  <span class="id-badge__led" aria-hidden="true"></span>
+                  <span>OPEN FOR WORK</span>
+                </div>
+              </div>
+            </div>
+            <div class="id-badge__footer">
+              <span class="id-badge__barcode" aria-hidden="true">||| | |||| || ||| | ||</span>
+              <span class="id-badge__sec">SEC-01</span>
+            </div>
+          </div>
+          <dl class="spec-list">
+            <div class="spec-row">
+              <dt class="spec-row__key">ubicación</dt>
+              <dd class="spec-row__val">Bilbao, ES</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="spec-row__key">enfoque</dt>
+              <dd class="spec-row__val">Full-Stack</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="spec-row__key">idiomas</dt>
+              <dd class="spec-row__val">ES / EN</dd>
+            </div>
+            <div class="spec-row">
+              <dt class="spec-row__key">estado</dt>
+              <dd class="spec-row__val spec-row__val--accent">open for work</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="about__text">
+          <p class="reveal"><span class="about__pindex">.01</span>
+            Soy estudiante de Ingeniería Informática en la Universidad de Deusto, apasionado por
+            construir software que resuelva problemas reales. Disfruto trabajando en todo el stack,
+            desde el diseño de interfaces intuitivas hasta la arquitectura de sistemas backend robustos y
+            cualquier problema pendiente por resolver.
+          </p>
+          <p class="reveal reveal-delay-1"><span class="about__pindex">.02</span>
+            A través de mis asignaturas he adquirido experiencia práctica con frameworks modernos y
+            flujos de trabajo de desarrollo colaborativo, bases de datos y diseño software. Me desenvuelvo
+            bien en equipo y me motiva transformar ideas complejas en aplicaciones funcionales y bien acabadas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-header__index">LOG.03</span>
+        <h2 class="section-header__title">Experiencia</h2>
+      </div>
+      <div class="experience__ledger">
+        <article class="experience__row reveal">
+          <div class="experience__when">
+            <span class="experience__node" aria-hidden="true"></span>
+            <span class="experience__date">JUN 2026 &mdash; JUN 2027</span>
+          </div>
+          <div class="experience__body">
+            <div class="experience__header">
+              <h3 class="experience__role">Desarrollador de Software</h3>
+              <span class="experience__company">Accenture</span>
+            </div>
+            <p class="experience__meta-sub">// Prácticas en empresa &middot; Bilbao, ES</p>
+            <p class="experience__detail">
+              Desarrollo y mantenimiento de software empresarial en entorno profesional.
+              Trabajo activo con tecnologías Java y bases de datos relacionales Oracle SQL, optimización de consultas,
+              resolución de incidencias y gestión integral del proyecto bajo metodologías ágiles de equipo.
+            </p>
+            <div class="experience__tags">
+              <span class="tag">Java</span>
+              <span class="tag">Oracle SQL</span>
+              <span class="tag">Gestión de Proyectos</span>
+              <span class="tag">Enterprise Software</span>
+            </div>
+          </div>
+          <span class="experience__status">[ EN CURSO ]</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== SKILLS ========== -->
   <section class="skills" id="skills">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-header__index">LOG.04</span>
-        <h2 class="section-header__title">Skills tecnicas</h2>
-      </div>
-
-      <div class="skills__categories reveal">
-        <button class="skills__category-btn active" data-category="all">todos</button>
-        <button class="skills__category-btn" data-category="languages">lenguajes</button>
-        <button class="skills__category-btn" data-category="frameworks">frameworks</button>
-        <button class="skills__category-btn" data-category="tools">herramientas</button>
-        <button class="skills__category-btn" data-category="concepts">conceptos</button>
+        <h2 class="section-header__title">Tecnologías principales</h2>
       </div>
 
       <div class="skills__grid">
-        <!-- Languages -->
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #F7DF1E;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #F7DF1E;">
           <i class="devicon-javascript-plain colored skill-card__icon"></i>
           <span class="skill-card__name">JavaScript</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #387EB8;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #387EB8;">
           <i class="devicon-python-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Python</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #EA580C;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #EA580C;">
           <i class="devicon-java-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Java</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #F80000;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #F80000;">
           <i class="devicon-oracle-original colored skill-card__icon"></i>
           <span class="skill-card__name">Oracle SQL</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #659AD2;">
-          <i class="devicon-c-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">C</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #00599C;">
-          <i class="devicon-cplusplus-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">C++</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #E34F26;">
-          <i class="devicon-html5-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">HTML5</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #1572B6;">
-          <i class="devicon-css3-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">CSS3</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="languages" style="--brand-color: #4479A1;">
-          <i class="devicon-mysql-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">SQL</span>
-        </div>
 
-        <!-- Frameworks -->
-        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #42B883;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #42B883;">
           <i class="devicon-vuejs-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Vue.js</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #6DB33F;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #6DB33F;">
           <i class="devicon-spring-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Spring Boot</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #5FA04E;">
-          <i class="devicon-nodejs-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">Node.js</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="frameworks" style="--brand-color: #85EA2D;">
-          <i class="devicon-swagger-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">Swagger</span>
-        </div>
 
-        <!-- Tools -->
-        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #F05032;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #F05032;">
           <i class="devicon-git-plain colored skill-card__icon"></i>
           <span class="skill-card__name">Git</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #EDE8DD;">
-          <i class="devicon-github-original skill-card__icon"></i>
-          <span class="skill-card__name">GitHub</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #00758F;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #00758F;">
           <i class="devicon-mysql-plain colored skill-card__icon"></i>
           <span class="skill-card__name">MySQL</span>
         </div>
-        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #47A248;">
-          <i class="devicon-mongodb-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">MongoDB</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #007ACC;">
-          <i class="devicon-vscode-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">VS Code</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="tools" style="--brand-color: #2496ED;">
-          <i class="devicon-docker-plain colored skill-card__icon"></i>
-          <span class="skill-card__name">Docker</span>
-        </div>
 
-        <!-- Concepts -->
-        <div class="skill-card cropframe reveal" data-category="concepts" style="--brand-color: #E89A4A;">
-          <i class="fa-solid fa-vial skill-card__icon skill-card__icon--fa"></i>
-          <span class="skill-card__name">Unit Testing</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="concepts" style="--brand-color: #E89A4A;">
-          <i class="fa-solid fa-cubes skill-card__icon skill-card__icon--fa"></i>
-          <span class="skill-card__name">POO</span>
-        </div>
-        <div class="skill-card cropframe reveal" data-category="concepts" style="--brand-color: #E89A4A;">
+        <div class="skill-card cropframe reveal" style="--brand-color: #E89A4A;">
           <i class="fa-solid fa-plug skill-card__icon skill-card__icon--fa"></i>
           <span class="skill-card__name">APIs REST</span>
         </div>
@@ -555,7 +431,7 @@
     <div class="container">
       <div class="section-header reveal">
         <span class="section-header__index">LOG.05</span>
-        <h2 class="section-header__title">Educacion</h2>
+        <h2 class="section-header__title">Educación</h2>
       </div>
       <div class="education__ledger">
         <article class="education__row reveal">
@@ -564,10 +440,10 @@
             <span class="education__date">2022 &mdash; PRESENTE</span>
           </div>
           <div class="education__body">
-            <h3 class="education__degree">Ingenieria Informatica</h3>
+            <h3 class="education__degree">Ingeniería Informática</h3>
             <p class="education__school">Universidad de Deusto, Bilbao</p>
             <p class="education__detail">
-              Formacion en desarrollo de software, ingenieria web, procesos de software,
+              Formación en desarrollo de software, ingeniería web, procesos de software,
               estructuras de datos, algoritmos y sistemas distribuidos.
             </p>
           </div>
@@ -602,7 +478,7 @@
       <div class="contact__block cropframe reveal">
         <p class="contact__prompt" aria-hidden="true">&gt; open for work &middot; full-stack developer</p>
         <p class="contact__text">
-          Actualmente realizando practicas en Accenture y siempre abierto a conectar, colaborar
+          Actualmente realizando prácticas en Accenture y siempre abierto a conectar, colaborar
           en nuevos proyectos y explorar retos profesionales como desarrollador de software.
         </p>
         <div class="contact__actions">
@@ -611,7 +487,7 @@
             <i class="fa-solid fa-envelope"></i> enviar email <span class="btn__arrow">&rarr;</span> zarzaleja86@gmail.com
             <span class="btn__bracket">]</span>
           </a>
-          <button class="contact__copy-btn" id="copyEmailBtn" type="button" aria-label="Copiar direccion de email" data-email="zarzaleja86@gmail.com">
+          <button class="contact__copy-btn" id="copyEmailBtn" type="button" aria-label="Copiar dirección de email" data-email="zarzaleja86@gmail.com">
             <span class="btn__bracket">[</span>
             <i class="fa-regular fa-copy" id="copyIcon"></i> <span id="copyText">copiar</span>
             <span class="btn__bracket">]</span>
@@ -640,7 +516,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__text">
-        &copy; 2026 &mdash; ALEJANDRO MARTINEZ BARBA &middot; HTML &middot; CSS &middot; JS<span class="footer__cursor">_</span>
+        &copy; 2026 &mdash; ALEJANDRO MARTÍNEZ BARBA &middot; HTML &middot; CSS &middot; JS<span class="footer__cursor">_</span>
       </p>
       <p class="footer__build" aria-hidden="true">BUILD 2026.06 &middot; BILBAO &middot; NO_FRAMEWORKS</p>
       <a href="#hero" class="footer__back-to-top" aria-label="Volver arriba">
